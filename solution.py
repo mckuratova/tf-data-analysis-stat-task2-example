@@ -11,9 +11,10 @@ def solution(p: float, x: np.array) -> tuple:
     # Это будет вашим решением
     # Не меняйте название функции и её аргументы
     alpha = 1 - p
-    loc = sum(x) / len(x)
+    x_max = max(x) / 2
     shift = 0.017
-    left = shift + (loc / p)
-    right = shift + (loc / alpha)
+    sq = pow(alpha, 1/len(x))
+    right = (x_max - shift) / sq
+    left = (x_max - shift)
     
     return left, right
