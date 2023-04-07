@@ -14,7 +14,7 @@ def solution(p: float, x: np.array) -> tuple:
     shift = 0.017
     x_max = max(x)
     sq = pow(alpha, 1/len(x))
-    right = (x_max - shift) / sq
+    right = (x_max - shift) / (sq - shift)
     left = (x_max - shift)
     
     return left, right
